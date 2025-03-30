@@ -8,7 +8,7 @@ const ComplaintSection = () => {
 
   const [department, setDepartment] = useState("Computer & Comm. Centre");
   const [category, setCategory] = useState("");
-  const [activePage, setActivePage] = useState(role==='Admin'?"Pending":"My Complaints");
+  const [activePage, setActivePage] = useState(role==='NonAcadAdmin'?"Pending":"My Complaints");
   const [searchQuery, setSearchQuery] = useState("");
   const [showNewComplaintForm, setShowNewComplaintForm] = useState(false); // State to control NewComplaintForm visibility
   const [selectedComplaint, setSelectedComplaint] = useState(null); // State to track the selected complaint for details
@@ -27,12 +27,21 @@ const ComplaintSection = () => {
       "Other"
 
     ],
-    "Hostel Complaints": [
+    "Hostel/Resident Complaints": [
       "Plumbing",
       "Room Servicing",
       "Electricity Issues",
       "Furniture Repair",
       "Cleaning Services",
+      "Other"
+    ],
+    "Infrastructure Complaints": [
+      "Gym",
+      "Badminton Hall",
+      "Table Tennis Court",
+      "Ground",
+      "Swimming Pool",
+      "Food Court",
       "Other"
     ],
   };
@@ -64,7 +73,7 @@ const ComplaintSection = () => {
   useEffect(() => {
     // Reset the selected complaint when the active page changes
     setSelectedComplaint(null);
-  }, [activePage]);
+  }, [activePage]);
   return (
     <div className="flex flex-col h-[100%] border-1 w-[98%] m-2">
       {/* Permanent Navbar */}
@@ -113,7 +122,8 @@ const ComplaintSection = () => {
               }}
             >
               <option>Computer & Comm. Centre</option>
-              <option>Hostel Complaints</option>
+              <option>Hostel/Resident Complaints</option>
+              <option>Infrastructure Complaints</option>
             </select>
 
             <label className="block font-semibold mt-4 mb-2">Select Category</label>
