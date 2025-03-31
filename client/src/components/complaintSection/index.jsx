@@ -4,7 +4,7 @@ import ComplaintDetails from "./ComplaintDetails"; // Import the updated Complai
 import complaintHistory from "./complaintHistory.json"; // Import the complaint history data
 
 const ComplaintSection = () => {
-  const [role,setRole]= useState("Student"); // State to track the role of the user
+  const [role,setRole]= useState("NonAcadAdmin"); // State to track the role of the user
 
   const [department, setDepartment] = useState("Computer & Comm. Centre");
   const [category, setCategory] = useState("");
